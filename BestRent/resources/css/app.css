@@ -1,0 +1,91 @@
+
+@import './base/variables.css';
+@import './base/global.css';
+@import './base/typography.css';
+
+@import './components/navbar.css';
+@import './components/buttons.css';
+@import './components/cards.css';
+@import './components/footer.css';
+
+@import './pages/home.css';
+@import './pages/cars.css';
+
+
+.text-primary { color: var(--primary-color) !important; }
+.text-secondary { color: var(--secondary-color) !important; }
+.text-muted { color: var(--gray-500) !important; }
+.text-danger { color: var(--accent-red) !important; }
+.text-success { color: var(--accent-success) !important; }
+
+.bg-light { background-color: var(--light) !important; }
+.bg-white { background-color: white !important; }
+.bg-primary { background-color: var(--primary-color) !important; }
+
+.d-flex { display: flex; }
+.align-items-center { align-items: center; }
+.justify-content-center { justify-content: center; }
+.justify-content-between { justify-content: space-between; }
+.gap-2 { gap: var(--spacing-md); }
+.gap-3 { gap: var(--spacing-lg); }
+
+.mt-1 { margin-top: var(--spacing-sm); }
+.mt-2 { margin-top: var(--spacing-md); }
+.mt-3 { margin-top: var(--spacing-lg); }
+.mt-4 { margin-top: var(--spacing-xl); }
+.mt-5 { margin-top: var(--spacing-2xl); }
+
+.mb-1 { margin-bottom: var(--spacing-sm); }
+.mb-2 { margin-bottom: var(--spacing-md); }
+.mb-3 { margin-bottom: var(--spacing-lg); }
+.mb-4 { margin-bottom: var(--spacing-xl); }
+.mb-5 { margin-bottom: var(--spacing-2xl); }
+
+.my-5 { margin: var(--spacing-2xl) 0; }
+
+.p-1 { padding: var(--spacing-sm); }
+.p-2 { padding: var(--spacing-md); }
+.p-3 { padding: var(--spacing-lg); }
+.p-4 { padding: var(--spacing-xl); }
+
+.fw-bold { font-weight: 700; }
+.fw-semibold { font-weight: 600; }
+.fw-normal { font-weight: 400; }
+
+.text-center { text-align: center; }
+.text-uppercase { text-transform: uppercase; }
+
+.w-100 { width: 100%; }
+.h-100 { height: 100%; }
+
+.image-cover-260 {
+    height: 260px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.image-cover-240 {
+    height: 240px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.image-max-220-cover {
+    max-height: 220px;
+    object-fit: cover;
+}
+
+.rounded { border-radius: var(--radius-lg); }
+.rounded-lg { border-radius: var(--radius-xl); }
+
+.border { border: 1px solid var(--border-color); }
+
+.shadow-sm { box-shadow: var(--shadow-sm); }
+.shadow { box-shadow: var(--shadow-md); }
+.shadow-lg { box-shadow: var(--shadow-lg); }
+
+.container { max-width: 1280px; margin: 0 auto; padding: 0 var(--spacing-lg); }
+
+@media (max-width: 768px) {
+    .container { padding: 0 var(--spacing-md); }
+}

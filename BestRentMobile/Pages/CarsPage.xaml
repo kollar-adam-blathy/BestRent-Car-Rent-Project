@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BestRentMobile.Pages.CarsPage"
+             Title="Autók"
+             BackgroundColor="Black">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="10" BackgroundColor="Black">
+            <Label Text="Autók kezelése" FontSize="24" FontAttributes="Bold" TextColor="White" />
+
+            <Button Text="Autók betöltése" Clicked="OnLoadClicked" BackgroundColor="#2563EB" TextColor="White" BorderWidth="0" />
+
+            <CollectionView x:Name="CarsCollection" SelectionMode="Single" SelectionChanged="OnCarSelected" HeightRequest="220">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BorderColor="#374151" BackgroundColor="#1F2937" Padding="8" Margin="0,4">
+                            <VerticalStackLayout Spacing="2">
+                                <Label Text="{Binding Title}" FontAttributes="Bold" TextColor="White" />
+                                <Label Text="{Binding Subtitle}" FontSize="12" TextColor="#9CA3AF" />
+                            </VerticalStackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Label Text="Márka" TextColor="White" />
+            <Entry x:Name="BrandEntry" TextColor="White" BackgroundColor="#1F2937" />
+
+            <Label Text="Modell" TextColor="White" />
+            <Entry x:Name="ModelEntry" TextColor="White" BackgroundColor="#1F2937" />
+
+            <Label Text="Kategória" TextColor="White" />
+            <Picker x:Name="CategoryPicker" BackgroundColor="#1F2937" TextColor="White" />
+
+            <Label Text="Év" TextColor="White" />
+            <Entry x:Name="YearEntry" Keyboard="Numeric" TextColor="White" BackgroundColor="#1F2937" />
+
+            <Label Text="Rendszám" TextColor="White" />
+            <Entry x:Name="PlateEntry" TextColor="White" BackgroundColor="#1F2937" />
+
+            <Label Text="Szín" TextColor="White" />
+            <Entry x:Name="ColorEntry" TextColor="White" BackgroundColor="#1F2937" />
+
+            <Label Text="Üzemanyag" TextColor="White" />
+            <Picker x:Name="FuelTypePicker" BackgroundColor="#1F2937" TextColor="White" />
+
+            <Label Text="Váltó" TextColor="White" />
+            <Picker x:Name="TransmissionPicker" BackgroundColor="#1F2937" TextColor="White" />
+
+            <Label Text="Ülések száma" TextColor="White" />
+            <Entry x:Name="SeatsEntry" Keyboard="Numeric" TextColor="White" BackgroundColor="#1F2937" />
+
+            <Label Text="Napi ár" TextColor="White" />
+            <Entry x:Name="PriceEntry" Keyboard="Numeric" TextColor="White" BackgroundColor="#1F2937" />
+
+            <Label Text="Státusz" TextColor="White" />
+            <Picker x:Name="StatusPicker" BackgroundColor="#1F2937" TextColor="White" />
+
+            <Label Text="Leírás" TextColor="White" />
+            <Editor x:Name="DescriptionEditor" HeightRequest="90" TextColor="White" BackgroundColor="#1F2937" />
+
+            <Grid ColumnDefinitions="*,*,*" ColumnSpacing="8">
+                <Button Grid.Column="0" Text="Hozzáadás" Clicked="OnAddClicked" BackgroundColor="#2563EB" TextColor="White" />
+                <Button Grid.Column="1" Text="Módosítás" Clicked="OnUpdateClicked" BackgroundColor="#2563EB" TextColor="White" />
+                <Button Grid.Column="2" Text="Törlés" Clicked="OnDeleteClicked" BackgroundColor="#DC2626" TextColor="White" />
+            </Grid>
+
+            <Label x:Name="StatusLabel" TextColor="White" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

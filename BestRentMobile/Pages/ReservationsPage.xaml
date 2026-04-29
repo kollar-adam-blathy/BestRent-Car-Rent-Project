@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:BestRentMobile.Models"
+             x:Class="BestRentMobile.Pages.ReservationsPage"
+             Title="Bérlések"
+             BackgroundColor="Black">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="10" BackgroundColor="Black">
+            <Label Text="Bérlések kezelése" FontSize="24" FontAttributes="Bold" TextColor="White" />
+
+            <Button Text="Bérlések betöltése" Clicked="OnLoadClicked" BackgroundColor="#2563EB" TextColor="White" BorderWidth="0" />
+
+            <CollectionView x:Name="ReservationsCollection" SelectionMode="Single" SelectionChanged="OnReservationSelected" HeightRequest="240">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:ReservationItem">
+                        <Frame BorderColor="#374151" BackgroundColor="#1F2937" Padding="8" Margin="0,4">
+                            <VerticalStackLayout Spacing="2">
+                                <Label Text="{Binding Title}" FontAttributes="Bold" TextColor="White" />
+                                <Label Text="{Binding Subtitle}" FontSize="12" TextColor="#9CA3AF" />
+                            </VerticalStackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Label Text="Felhasználó ID" TextColor="White" />
+            <Entry x:Name="ReservationUserIdEntry" Keyboard="Numeric" TextColor="White" BackgroundColor="#1F2937" />
+
+            <Label Text="Autó" TextColor="White" />
+            <Picker x:Name="ReservationCarPicker" ItemDisplayBinding="{Binding Title}" BackgroundColor="#1F2937" TextColor="White" />
+
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="8">
+                <VerticalStackLayout>
+                    <Label Text="Kezdés" TextColor="White" />
+                    <DatePicker x:Name="StartDatePicker" />
+                </VerticalStackLayout>
+                <VerticalStackLayout Grid.Column="1">
+                    <Label Text="Befejezés" TextColor="White" />
+                    <DatePicker x:Name="EndDatePicker" />
+                </VerticalStackLayout>
+            </Grid>
+
+            <Label Text="Felvétel helye" TextColor="White" />
+            <Picker x:Name="PickupLocationPicker" BackgroundColor="#1F2937" TextColor="White" />
+
+            <Label Text="Leadás helye" TextColor="White" />
+            <Picker x:Name="DropoffLocationPicker" BackgroundColor="#1F2937" TextColor="White" />
+
+            <Label Text="Státusz" TextColor="White" />
+            <Picker x:Name="ReservationStatusPicker" BackgroundColor="#1F2937" TextColor="White" />
+
+            <Label Text="Megjegyzés" TextColor="White" />
+            <Editor x:Name="ReservationNotesEditor" HeightRequest="80" TextColor="White" BackgroundColor="#1F2937" />
+
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="8">
+                <Button Grid.Column="0" Text="Módosítás" Clicked="OnUpdateClicked" BackgroundColor="#2563EB" TextColor="White" />
+                <Button Grid.Column="1" Text="Törlés" Clicked="OnDeleteClicked" BackgroundColor="#DC2626" TextColor="White" />
+            </Grid>
+
+            <Label x:Name="StatusLabel" TextColor="White" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

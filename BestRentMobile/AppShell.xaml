@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="BestRentMobile.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:BestRentMobile.Pages"
+    Title="BestRent mobile admin felület"
+    Shell.BackgroundColor="#2563EB"
+    Shell.TitleColor="White"
+    Shell.ForegroundColor="White">
+
+    <TabBar>
+        <ShellContent
+            Title="Autók"
+            ContentTemplate="{DataTemplate pages:CarsPage}"
+            Route="CarsPage" />
+
+        <ShellContent
+            Title="Bérlések"
+            ContentTemplate="{DataTemplate pages:ReservationsPage}"
+            Route="ReservationsPage" />
+    </TabBar>
+
+</Shell>
